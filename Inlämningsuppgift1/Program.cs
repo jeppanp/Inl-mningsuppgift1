@@ -9,9 +9,13 @@ namespace Inlämningsuppgift1
             Console.Title = "Fucked up calculator";
 
             Console.WriteLine("Enter your first operator: ");
+            var operator1 = Operator();
+            Console.WriteLine("Enter your second operator: ");
+            char operator2 = Operator();
 
 
         }
+
 
 
         // User choice for an operator 
@@ -43,5 +47,28 @@ namespace Inlämningsuppgift1
             } while (myBool);
             return operantInChar;
         }
+
+        // User picks a number
+        static double Nr()
+        {
+            double nrInDouble = 0;
+            bool myBool = true;
+            do
+            {
+                Console.WriteLine("Enter a number");
+                string nrInString = Console.ReadLine();
+                try
+                {
+                    nrInDouble = Convert.ToDouble(nrInString);
+                    myBool = false;
+                }
+                catch
+                {
+                    Console.WriteLine("Only numbers, please");
+                }
+            } while (myBool);
+            return nrInDouble;
+        }
+
     }
 }
