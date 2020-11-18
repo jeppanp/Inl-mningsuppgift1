@@ -9,7 +9,7 @@ namespace Inlämningsuppgift1
             Console.Title = "Fucked up calculator";
 
             Console.WriteLine("Enter your first operator: ");
-            var operator1 = Operator();
+            char operator1 = Operator();
             Console.WriteLine("Enter your second operator: ");
             char operator2 = Operator();
 
