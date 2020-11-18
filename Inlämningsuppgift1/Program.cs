@@ -6,7 +6,8 @@ namespace Inlämningsuppgift1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.Title = "Fucked up calculator";
+
         }
     }
 }
