@@ -111,10 +111,6 @@ namespace Inlämningsuppgift1
                 {
                     sum = a * b / c;
                 }
-                else if (operator2 == '%')
-                {
-                    sum = a * (b % c);
-                }
             }
 
             else if (operator1 == '+')
@@ -134,11 +130,7 @@ namespace Inlämningsuppgift1
                 else if (operator2 == '/')
                 {
                     sum = a + b / c;
-                }
-                else if (operator2 == '%')
-                {
-                    sum = a + (b % c);
-                }
+                }     
             }
 
             else if (operator1 == '-')
@@ -159,10 +151,6 @@ namespace Inlämningsuppgift1
                 {
                     sum = a - b / c;
                 }
-                else if (operator2 == '%')
-                {
-                    sum = a - b % c;
-                }
             }
             else if (operator1 == '/')
             {
@@ -181,33 +169,6 @@ namespace Inlämningsuppgift1
                 else if (operator2 == '/')
                 {
                     sum = a / b / c;
-                }
-                else if (operator2 == '%')
-                {
-                    sum = a / b % c;
-                }
-            }
-            else if (operator1 == '%')
-            {
-                if (operator2 == '*')
-                {
-                    sum = a % b * c;
-                }
-                else if (operator2 == '+')
-                {
-                    sum = (a % b) + c;
-                }
-                else if (operator2 == '-')
-                {
-                    sum = a % b - c;
-                }
-                else if (operator2 == '/')
-                {
-                    sum = a % b / c;
-                }
-                else if (operator2 == '%')
-                {
-                    sum = a % b % c;
                 }
             }
             return sum;
