@@ -17,131 +17,11 @@ namespace Inlämningsuppgift1
                 char operator1 = Operator();
                 Console.WriteLine("Enter your second operator: ");
                 char operator2 = Operator();
-                double a = Nr();
-                double b = Nr();
-                double c = Nr();
-
-                //all possible outcomes with 2 operators, 25 possibilities. 
-
-                //TODO  KONTROLLRÄKNA % 
-
-                if (operator1 == '*')
-                {
-                    if (operator2 == '*')
-                    {
-                        sum = a * b * c;
-                    }
-                    else if (operator2 == '+')
-                    {
-                        sum = a * b + c;
-                    }
-                    else if (operator2 == '-')
-                    {
-                        sum = a * b - c;
-                    }
-                    else if (operator2 == '/')
-                    {
-                        sum = a * b / c;
-                    }
-                    else if (operator2 == '%')
-                    {
-                        sum = a * (b % c);
-                    }
-                }
-
-                else if (operator1 == '+')
-                {
-                    if (operator2 == '*')
-                    {
-                        sum = a + b * c;
-                    }
-                    else if (operator2 == '+')
-                    {
-                        sum = a + b + c;
-                    }
-                    else if (operator2 == '-')
-                    {
-                        sum = a + b - c;
-                    }
-                    else if (operator2 == '/')
-                    {
-                        sum = a + b / c;
-                    }
-                    else if (operator2 == '%')
-                    {
-                        sum = a + (b % c);
-                    }
-                }
-
-                else if (operator1 == '-')
-                {
-                    if (operator2 == '*')
-                    {
-                        sum = a - b * c;
-                    }
-                    else if (operator2 == '+')
-                    {
-                        sum = a - b + c;
-                    }
-                    else if (operator2 == '-')
-                    {
-                        sum = a - b - c;
-                    }
-                    else if (operator2 == '/')
-                    {
-                        sum = a - b / c;
-                    }
-                    else if (operator2 == '%')
-                    {
-                        sum = a - b % c;
-                    }
-                }
-                else if (operator1 == '/')
-                {
-                    if (operator2 == '*')
-                    {
-                        sum = a / b * c;
-                    }
-                    else if (operator2 == '+')
-                    {
-                        sum = a / b + c;
-                    }
-                    else if (operator2 == '-')
-                    {
-                        sum = a / b - c;
-                    }
-                    else if (operator2 == '/')
-                    {
-                        sum = a / b / c;
-                    }
-                    else if (operator2 == '%')
-                    {
-                        sum = a / b % c;
-                    }
-                }
-                else if (operator1 == '%')
-                {
-                    if (operator2 == '*')
-                    {
-                        sum = a % b * c;
-                    }
-                    else if (operator2 == '+')
-                    {
-                        sum = (a % b) + c;
-                    }
-                    else if (operator2 == '-')
-                    {
-                        sum = a % b - c;
-                    }
-                    else if (operator2 == '/')
-                    {
-                        sum = a % b / c;
-                    }
-                    else if (operator2 == '%')
-                    {
-                        sum = a % b % c;
-                    }
-                }
+                double a = SelectNr();
+                double b = SelectNr();
+                double c = SelectNr();
+                sum = Calculator(a, b, c, operator1, operator2);
+                
                 Console.WriteLine("{0} {1} {2} {3} {4} = {5} ", a, operator1, b, operator2, c, sum);
 
                 int i1 = 1;
@@ -169,6 +49,7 @@ namespace Inlämningsuppgift1
                 {
                     Console.WriteLine("Cool, now you have a hundred, clap clap");
                 }
+
                 Console.WriteLine("Antoher try? Enter [Y]es or [N]o");
 
                 do                                                          //This loop is to make sure the program doesnt crasch if user enter wrong key.
@@ -177,12 +58,12 @@ namespace Inlämningsuppgift1
 
                     if (continueInString == "Y" || continueInString == "y")
                     {
-                        Console.Clear();                                                        
+                        Console.Clear();
                         break;                                                                   // Get us out of this inner loop to continue the program
                     }
 
-                    else if (continueInString == "N" || continueInString == "n")   
-                    {                                                               
+                    else if (continueInString == "N" || continueInString == "n")
+                    {
                         Console.WriteLine("Thank you for playing. The sum of all rounds is {0}. Bye", totalSum);
                         keepGoing = false;                                                                    // Changing the bool to false to get out of the loop that runs the program.                           
                         break;                                                                                // Takes us out form this inner loop.
@@ -193,6 +74,131 @@ namespace Inlämningsuppgift1
 
             } while (keepGoing);
 
+        }
+
+
+        //all possible outcomes with 2 operators, 25 possibilities. 
+        static double Calculator(double a, double b, double c, char operator1, char operator2)
+            {
+            double sum = 0;
+            if (operator1 == '*')
+            {
+                if (operator2 == '*')
+                {
+                    sum = a * b * c;
+                }
+                else if (operator2 == '+')
+                {
+                    sum = a * b + c;
+                }
+                else if (operator2 == '-')
+                {
+                    sum = a * b - c;
+                }
+                else if (operator2 == '/')
+                {
+                    sum = a * b / c;
+                }
+                else if (operator2 == '%')
+                {
+                    sum = a * (b % c);
+                }
+            }
+
+            else if (operator1 == '+')
+            {
+                if (operator2 == '*')
+                {
+                    sum = a + b * c;
+                }
+                else if (operator2 == '+')
+                {
+                    sum = a + b + c;
+                }
+                else if (operator2 == '-')
+                {
+                    sum = a + b - c;
+                }
+                else if (operator2 == '/')
+                {
+                    sum = a + b / c;
+                }
+                else if (operator2 == '%')
+                {
+                    sum = a + (b % c);
+                }
+            }
+
+            else if (operator1 == '-')
+            {
+                if (operator2 == '*')
+                {
+                    sum = a - b * c;
+                }
+                else if (operator2 == '+')
+                {
+                    sum = a - b + c;
+                }
+                else if (operator2 == '-')
+                {
+                    sum = a - b - c;
+                }
+                else if (operator2 == '/')
+                {
+                    sum = a - b / c;
+                }
+                else if (operator2 == '%')
+                {
+                    sum = a - b % c;
+                }
+            }
+            else if (operator1 == '/')
+            {
+                if (operator2 == '*')
+                {
+                    sum = a / b * c;
+                }
+                else if (operator2 == '+')
+                {
+                    sum = a / b + c;
+                }
+                else if (operator2 == '-')
+                {
+                    sum = a / b - c;
+                }
+                else if (operator2 == '/')
+                {
+                    sum = a / b / c;
+                }
+                else if (operator2 == '%')
+                {
+                    sum = a / b % c;
+                }
+            }
+            else if (operator1 == '%')
+            {
+                if (operator2 == '*')
+                {
+                    sum = a % b * c;
+                }
+                else if (operator2 == '+')
+                {
+                    sum = (a % b) + c;
+                }
+                else if (operator2 == '-')
+                {
+                    sum = a % b - c;
+                }
+                else if (operator2 == '/')
+                {
+                    sum = a % b / c;
+                }
+                else if (operator2 == '%')
+                {
+                    sum = a % b % c;
+                }
+            }
+            return sum;
         }
 
 
@@ -228,7 +234,7 @@ namespace Inlämningsuppgift1
         }
 
         // User picks a number
-        static double Nr()
+        static double SelectNr()
         {
             double nrInDouble = 0;
             bool myBool = true;
