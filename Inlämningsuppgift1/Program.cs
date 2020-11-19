@@ -157,7 +157,19 @@ namespace Inlämningsuppgift1
                     totalSum = totalSum + result[i];
                 }
 
-              
+                if (sum < 100)
+                {
+                    Console.WriteLine("The sum is less then a hundred");
+                }
+                else if (sum > 100)
+                {
+                    Console.WriteLine("The sum is more then a hundred");
+                }
+                else if (sum == 100)
+                {
+                    Console.WriteLine("Cool, now you have a hundred, clap clap");
+                }
+
 
             } while (keepGoing);
 
