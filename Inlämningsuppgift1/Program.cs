@@ -169,7 +169,27 @@ namespace Inlämningsuppgift1
                 {
                     Console.WriteLine("Cool, now you have a hundred, clap clap");
                 }
+                Console.WriteLine("Antoher try? Enter [Y]es or [N]o");
 
+                do                                                          //This loop is to make sure the program doesnt crasch if user enter wrong key.
+                {
+                    string continueInString = Console.ReadLine();
+
+                    if (continueInString == "Y" || continueInString == "y")
+                    {
+                        Console.Clear();                                                        
+                        break;                                                                   // Get us out of this inner loop to continue the program
+                    }
+
+                    else if (continueInString == "N" || continueInString == "n")   
+                    {                                                               
+                        Console.WriteLine("Thank you for playing. The sum of all rounds is {0}. Bye", totalSum);
+                        keepGoing = false;                                                                    // Changing the bool to false to get out of the loop that runs the program.                           
+                        break;                                                                                // Takes us out form this inner loop.
+                    }
+                    else
+                        Console.WriteLine("Please, enter \"Y\" or \"N\" ");
+                } while (true);
 
             } while (keepGoing);
 
