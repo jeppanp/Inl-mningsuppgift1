@@ -8,8 +8,11 @@ namespace Inlämningsuppgift1
         {
             Console.Title = "Fucked up calculator";
             double sum;
-            double totalSum = 0;
+            double finalResult = 0;
             bool keepGoing = true;
+            int i1 = 1;
+            int i2 = 0;
+
 
             do
             {
@@ -24,15 +27,15 @@ namespace Inlämningsuppgift1
 
                 Console.WriteLine("{0} {1} {2} {3} {4} = {5} ", a, operator1, b, operator2, c, sum);
 
-                int i1 = 1;
-                double[] result = new double[i1];                          // Creating my array that holds the results of each caculation every lap
-                result[0] = sum;
+                double[] result = new double[i1];
+                result[i2] = sum;
                 i1++;
-                totalSum = FinalResult(result, totalSum);
+                i2++;
+                finalResult = TotalSum(result, finalResult);
 
                 SumMoreOrLessThenHundred(sum);
 
-                keepGoing = WannaGoAgain(totalSum, keepGoing);
+                keepGoing = WannaGoAgain(finalResult, keepGoing);
             } while (keepGoing);
 
         }
@@ -78,18 +81,18 @@ namespace Inlämningsuppgift1
                 Console.WriteLine("Cool, now you have a hundred, clap clap");
             }
         }
-        static double FinalResult(double[] result, double totalSum)
+        static double TotalSum(double[] result, double finalResult)
         {
 
             for (int i = 0; i < result.Length; i++)                     // Adds all the results in to a final sum
             {
 
-                totalSum = totalSum + result[i];
+                finalResult = finalResult + result[i];
             }
-            return totalSum;
+            return finalResult;
         }
 
-        //all possible outcomes with 2 operators, 25 possibilities. 
+        //all possible outcomes with 2 operators, 16 possibilities. 
         static double Calculator(double a, double b, double c, char operator1, char operator2)
         {
             double sum = 0;
@@ -130,7 +133,7 @@ namespace Inlämningsuppgift1
                 else if (operator2 == '/')
                 {
                     sum = a + b / c;
-                }     
+                }
             }
 
             else if (operator1 == '-')
@@ -204,7 +207,7 @@ namespace Inlämningsuppgift1
             return operantInChar;
         }
 
-       
+
         static double SelectNr()
         {
             double nrInDouble = 0;
