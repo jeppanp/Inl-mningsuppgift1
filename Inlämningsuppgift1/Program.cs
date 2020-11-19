@@ -182,7 +182,7 @@ namespace Inlämningsuppgift1
             do
             {
                 string operatorInString = Console.ReadLine();
-                if (operatorInString == "*" || operatorInString == "/" || operatorInString == "-" || operatorInString == "+" || operatorInString == "%")
+                if (operatorInString == "*" || operatorInString == "/" || operatorInString == "-" || operatorInString == "+")
                 {
                     try
                     {
@@ -192,13 +192,13 @@ namespace Inlämningsuppgift1
                     }
                     catch
                     {
-                        Console.WriteLine("Please try to enter an operant /, *, +, -, %");
+                        Console.WriteLine("You can only choose between \"+, - , * , /\"");
 
                     }
                 }
                 else
                 {
-                    Console.WriteLine("You can only choose between \"+, - , * , / , %\" ");
+                    Console.WriteLine("You can only choose between \"+, - , * , /\"");
                 }
             } while (myBool);
             return operantInChar;
