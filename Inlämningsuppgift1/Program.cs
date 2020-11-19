@@ -8,138 +8,158 @@ namespace Inlämningsuppgift1
         {
             Console.Title = "Fucked up calculator";
             double sum = 0;
+            double totalSum = 0;
+            bool keepGoing = true;
 
-            Console.WriteLine("Enter your first operator: ");
-            char operator1 = Operator();
-            Console.WriteLine("Enter your second operator: ");
-            char operator2 = Operator();
-            double a = Nr();
-            double b = Nr();
-            double c = Nr();
-
-            //all possible outcomes with 2 operators, 25 possibilities. 
-
-            //TODO  KONTROLLRÄKNA % 
-
-            if (operator1 == '*')
+            do
             {
-                if (operator2 == '*')
-                {
-                    sum = a * b * c;
-                }
-                else if (operator2 == '+')
-                {
-                    sum = a * b + c;
-                }
-                else if (operator2 == '-')
-                {
-                    sum = a * b - c;
-                }
-                else if (operator2 == '/')
-                {
-                    sum = a * b / c;
-                }
-                else if (operator2 == '%')
-                {
-                    sum = a * (b % c);
-                }
-            }
+                Console.WriteLine("Enter your first operator: ");
+                char operator1 = Operator();
+                Console.WriteLine("Enter your second operator: ");
+                char operator2 = Operator();
+                double a = Nr();
+                double b = Nr();
+                double c = Nr();
 
-            else if (operator1 == '+')
-            {
-                if (operator2 == '*')
-                {
-                    sum = a + b * c;
-                }
-                else if (operator2 == '+')
-                {
-                    sum = a + b + c;
-                }
-                else if (operator2 == '-')
-                {
-                    sum = a + b - c;
-                }
-                else if (operator2 == '/')
-                {
-                    sum = a + b / c;
-                }
-                else if (operator2 == '%')
-                {
-                    sum = a + (b % c);
-                }
-            }
+                //all possible outcomes with 2 operators, 25 possibilities. 
 
-            else if (operator1 == '-')
-            {
-                if (operator2 == '*')
-                {
-                    sum = a - b * c;
-                }
-                else if (operator2 == '+')
-                {
-                    sum = a - b + c;
-                }
-                else if (operator2 == '-')
-                {
-                    sum = a - b - c;
-                }
-                else if (operator2 == '/')
-                {
-                    sum = a - b / c;
-                }
-                else if (operator2 == '%')
-                {
-                    sum = a - b % c;
-                }
-            }
-            else if (operator1 == '/')
-            {
-                if (operator2 == '*')
-                {
-                    sum = a / b * c;
-                }
-                else if (operator2 == '+')
-                {
-                    sum = a / b + c;
-                }
-                else if (operator2 == '-')
-                {
-                    sum = a / b - c;
-                }
-                else if (operator2 == '/')
-                {
-                    sum = a / b / c;
-                }
-                else if (operator2 == '%')
-                {
-                    sum = a / b % c;
-                }
-            }
-            else if (operator1 == '%')
-            {
-                if (operator2 == '*')
-                {
-                    sum = a % b * c;
-                }
-                else if (operator2 == '+')
-                {
-                    sum = (a % b) + c;
-                }
-                else if (operator2 == '-')
-                {
-                    sum = a % b - c;
-                }
-                else if (operator2 == '/')
-                {
-                    sum = a % b / c;
-                }
-                else if (operator2 == '%')
-                {
-                    sum = a % b % c;
-                }
-            }
-            Console.WriteLine("{0} {1} {2} {3} {4} = {5} ", a, operator1, b, operator2, c, sum);
+                //TODO  KONTROLLRÄKNA % 
 
+                if (operator1 == '*')
+                {
+                    if (operator2 == '*')
+                    {
+                        sum = a * b * c;
+                    }
+                    else if (operator2 == '+')
+                    {
+                        sum = a * b + c;
+                    }
+                    else if (operator2 == '-')
+                    {
+                        sum = a * b - c;
+                    }
+                    else if (operator2 == '/')
+                    {
+                        sum = a * b / c;
+                    }
+                    else if (operator2 == '%')
+                    {
+                        sum = a * (b % c);
+                    }
+                }
+
+                else if (operator1 == '+')
+                {
+                    if (operator2 == '*')
+                    {
+                        sum = a + b * c;
+                    }
+                    else if (operator2 == '+')
+                    {
+                        sum = a + b + c;
+                    }
+                    else if (operator2 == '-')
+                    {
+                        sum = a + b - c;
+                    }
+                    else if (operator2 == '/')
+                    {
+                        sum = a + b / c;
+                    }
+                    else if (operator2 == '%')
+                    {
+                        sum = a + (b % c);
+                    }
+                }
+
+                else if (operator1 == '-')
+                {
+                    if (operator2 == '*')
+                    {
+                        sum = a - b * c;
+                    }
+                    else if (operator2 == '+')
+                    {
+                        sum = a - b + c;
+                    }
+                    else if (operator2 == '-')
+                    {
+                        sum = a - b - c;
+                    }
+                    else if (operator2 == '/')
+                    {
+                        sum = a - b / c;
+                    }
+                    else if (operator2 == '%')
+                    {
+                        sum = a - b % c;
+                    }
+                }
+                else if (operator1 == '/')
+                {
+                    if (operator2 == '*')
+                    {
+                        sum = a / b * c;
+                    }
+                    else if (operator2 == '+')
+                    {
+                        sum = a / b + c;
+                    }
+                    else if (operator2 == '-')
+                    {
+                        sum = a / b - c;
+                    }
+                    else if (operator2 == '/')
+                    {
+                        sum = a / b / c;
+                    }
+                    else if (operator2 == '%')
+                    {
+                        sum = a / b % c;
+                    }
+                }
+                else if (operator1 == '%')
+                {
+                    if (operator2 == '*')
+                    {
+                        sum = a % b * c;
+                    }
+                    else if (operator2 == '+')
+                    {
+                        sum = (a % b) + c;
+                    }
+                    else if (operator2 == '-')
+                    {
+                        sum = a % b - c;
+                    }
+                    else if (operator2 == '/')
+                    {
+                        sum = a % b / c;
+                    }
+                    else if (operator2 == '%')
+                    {
+                        sum = a % b % c;
+                    }
+                }
+                Console.WriteLine("{0} {1} {2} {3} {4} = {5} ", a, operator1, b, operator2, c, sum);
+
+                int i1 = 1;
+                int i2 = 0;
+                
+                double[] result = new double[i1];                          // Creating my array that holds the results of each caculation every lap
+                result[i2] = sum;
+                i1++;
+
+                for (int i = 0; i < result.Length; i++)                     // Adds all the results in to a final sum
+                {
+
+                    totalSum = totalSum + result[i];
+                }
+
+              
+
+            } while (keepGoing);
 
         }
 
