@@ -7,12 +7,138 @@ namespace Inlämningsuppgift1
         static void Main(string[] args)
         {
             Console.Title = "Fucked up calculator";
+            double sum = 0;
 
             Console.WriteLine("Enter your first operator: ");
             char operator1 = Operator();
             Console.WriteLine("Enter your second operator: ");
             char operator2 = Operator();
+            double a = Nr();
+            double b = Nr();
+            double c = Nr();
 
+            //all possible outcomes with 2 operators, 25 possibilities. 
+
+            //TODO  KONTROLLRÄKNA % 
+
+            if (operator1 == '*')
+            {
+                if (operator2 == '*')
+                {
+                    sum = a * b * c;
+                }
+                if (operator2 == '+')
+                {
+                    sum = a * b + c;
+                }
+                if (operator2 == '-')
+                {
+                    sum = a * b - c;
+                }
+                if (operator2 == '/')
+                {
+                    sum = a * b / c;
+                }
+                if (operator2 == '%')
+                {
+                    sum = a * (b % c);
+                }
+            }
+
+            if (operator1 == '+')
+            {
+                if (operator2 == '*')
+                {
+                    sum = a + b * c;
+                }
+                if (operator2 == '+')
+                {
+                    sum = a + b + c;
+                }
+                if (operator2 == '-')
+                {
+                    sum = a + b - c;
+                }
+                if (operator2 == '/')
+                {
+                    sum = a + b / c;
+                }
+                if (operator2 == '%')
+                {
+                    sum = a + (b % c);
+                }
+            }
+
+            if (operator1 == '-')
+            {
+                if (operator2 == '*')
+                {
+                    sum = a - b * c;
+                }
+                if (operator2 == '+')
+                {
+                    sum = a - b + c;
+                }
+                if (operator2 == '-')
+                {
+                    sum = a - b - c;
+                }
+                if (operator2 == '/')
+                {
+                    sum = a - b / c;
+                }
+                if (operator2 == '%')
+                {
+                    sum = a - b % c;
+                }
+            }
+            if (operator1 == '/')
+            {
+                if (operator2 == '*')
+                {
+                    sum = a / b * c;
+                }
+                if (operator2 == '+')
+                {
+                    sum = a / b + c;
+                }
+                if (operator2 == '-')
+                {
+                    sum = a / b - c;
+                }
+                if (operator2 == '/')
+                {
+                    sum = a / b / c;
+                }
+                if (operator2 == '%')
+                {
+                    sum = a / b % c;
+                }
+            }
+            if (operator1 == '%')
+            {
+                if (operator2 == '*')
+                {
+                    sum = a % b * c;
+                }
+                if (operator2 == '+')
+                {
+                    sum = (a % b) + c;
+                }
+                if (operator2 == '-')
+                {
+                    sum = a % b - c;
+                }
+                if (operator2 == '/')
+                {
+                    sum = a % b / c;
+                }
+                if (operator2 == '%')
+                {
+                    sum = a % b % c;
+                }
+            }
+            Console.WriteLine("{0} {1} {2} {3} {4} = {5} ", a, operator1, b, operator2, c, sum);
 
         }
 
