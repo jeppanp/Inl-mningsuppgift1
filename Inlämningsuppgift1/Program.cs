@@ -7,79 +7,91 @@ namespace Inlämningsuppgift1
         static void Main(string[] args)
         {
             Console.Title = "Fucked up calculator";
-            double sum = 0;
+            double sum;
             double totalSum = 0;
             bool keepGoing = true;
 
             do
             {
                 Console.WriteLine("Enter your first operator: ");
-                char operator1 = Operator();
+                char operator1 = SelectOperator();
                 Console.WriteLine("Enter your second operator: ");
-                char operator2 = Operator();
+                char operator2 = SelectOperator();
                 double a = SelectNr();
                 double b = SelectNr();
                 double c = SelectNr();
                 sum = Calculator(a, b, c, operator1, operator2);
-                
+
                 Console.WriteLine("{0} {1} {2} {3} {4} = {5} ", a, operator1, b, operator2, c, sum);
 
                 int i1 = 1;
-                int i2 = 0;
-                
                 double[] result = new double[i1];                          // Creating my array that holds the results of each caculation every lap
-                result[i2] = sum;
+                result[0] = sum;
                 i1++;
+                totalSum = FinalResult(result, totalSum);
 
-                for (int i = 0; i < result.Length; i++)                     // Adds all the results in to a final sum
-                {
+                SumMoreOrLessThenHundred(sum);
 
-                    totalSum = totalSum + result[i];
-                }
-
-                if (sum < 100)
-                {
-                    Console.WriteLine("The sum is less then a hundred");
-                }
-                else if (sum > 100)
-                {
-                    Console.WriteLine("The sum is more then a hundred");
-                }
-                else if (sum == 100)
-                {
-                    Console.WriteLine("Cool, now you have a hundred, clap clap");
-                }
-
-                Console.WriteLine("Antoher try? Enter [Y]es or [N]o");
-
-                do                                                          //This loop is to make sure the program doesnt crasch if user enter wrong key.
-                {
-                    string continueInString = Console.ReadLine();
-
-                    if (continueInString == "Y" || continueInString == "y")
-                    {
-                        Console.Clear();
-                        break;                                                                   // Get us out of this inner loop to continue the program
-                    }
-
-                    else if (continueInString == "N" || continueInString == "n")
-                    {
-                        Console.WriteLine("Thank you for playing. The sum of all rounds is {0}. Bye", totalSum);
-                        keepGoing = false;                                                                    // Changing the bool to false to get out of the loop that runs the program.                           
-                        break;                                                                                // Takes us out form this inner loop.
-                    }
-                    else
-                        Console.WriteLine("Please, enter \"Y\" or \"N\" ");
-                } while (true);
-
+                keepGoing = WannaGoAgain(totalSum, keepGoing);
             } while (keepGoing);
 
         }
 
+        static bool WannaGoAgain(double totalSum, bool keepGoing)
+        {
+            Console.WriteLine("Antoher try? Enter [Y]es or [N]o");
+
+            do                                                          //This loop is to make sure the program doesnt crasch if user enter wrong key.
+            {
+                string continueInString = Console.ReadLine();
+
+                if (continueInString == "Y" || continueInString == "y")
+                {
+                    Console.Clear();
+                    return keepGoing;                                                                   // Get us out of this inner loop to continue the program
+                }
+
+                else if (continueInString == "N" || continueInString == "n")
+                {
+                    Console.WriteLine("Thank you for playing. The sum of all rounds is {0}. Bye", totalSum);
+                    keepGoing = false;
+                    return keepGoing;                                                                                        // Changing the bool to false to get out of the loop that runs the program.                           
+                                                                                                                             // Takes us out form this inner loop.
+                }
+                else
+                    Console.WriteLine("Please, enter \"Y\" or \"N\" ");
+            } while (true);
+        }
+
+        static void SumMoreOrLessThenHundred(double sum)
+        {
+            if (sum < 100)
+            {
+                Console.WriteLine("The sum is less then a hundred");
+            }
+            else if (sum > 100)
+            {
+                Console.WriteLine("The sum is more then a hundred");
+            }
+            else if (sum == 100)
+            {
+                Console.WriteLine("Cool, now you have a hundred, clap clap");
+            }
+        }
+        static double FinalResult(double[] result, double totalSum)
+        {
+
+            for (int i = 0; i < result.Length; i++)                     // Adds all the results in to a final sum
+            {
+
+                totalSum = totalSum + result[i];
+            }
+            return totalSum;
+        }
 
         //all possible outcomes with 2 operators, 25 possibilities. 
         static double Calculator(double a, double b, double c, char operator1, char operator2)
-            {
+        {
             double sum = 0;
             if (operator1 == '*')
             {
@@ -202,9 +214,7 @@ namespace Inlämningsuppgift1
         }
 
 
-
-        // User choice for an operator 
-        static char Operator()
+        static char SelectOperator()
         {
             char operantInChar = '0';
             bool myBool = true;
@@ -233,7 +243,7 @@ namespace Inlämningsuppgift1
             return operantInChar;
         }
 
-        // User picks a number
+       
         static double SelectNr()
         {
             double nrInDouble = 0;
