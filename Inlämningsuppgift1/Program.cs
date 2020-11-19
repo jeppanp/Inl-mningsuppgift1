@@ -27,118 +27,119 @@ namespace Inlämningsuppgift1
                 {
                     sum = a * b * c;
                 }
-                if (operator2 == '+')
+                else if (operator2 == '+')
                 {
                     sum = a * b + c;
                 }
-                if (operator2 == '-')
+                else if (operator2 == '-')
                 {
                     sum = a * b - c;
                 }
-                if (operator2 == '/')
+                else if (operator2 == '/')
                 {
                     sum = a * b / c;
                 }
-                if (operator2 == '%')
+                else if (operator2 == '%')
                 {
                     sum = a * (b % c);
                 }
             }
 
-            if (operator1 == '+')
+            else if (operator1 == '+')
             {
                 if (operator2 == '*')
                 {
                     sum = a + b * c;
                 }
-                if (operator2 == '+')
+                else if (operator2 == '+')
                 {
                     sum = a + b + c;
                 }
-                if (operator2 == '-')
+                else if (operator2 == '-')
                 {
                     sum = a + b - c;
                 }
-                if (operator2 == '/')
+                else if (operator2 == '/')
                 {
                     sum = a + b / c;
                 }
-                if (operator2 == '%')
+                else if (operator2 == '%')
                 {
                     sum = a + (b % c);
                 }
             }
 
-            if (operator1 == '-')
+            else if (operator1 == '-')
             {
                 if (operator2 == '*')
                 {
                     sum = a - b * c;
                 }
-                if (operator2 == '+')
+                else if (operator2 == '+')
                 {
                     sum = a - b + c;
                 }
-                if (operator2 == '-')
+                else if (operator2 == '-')
                 {
                     sum = a - b - c;
                 }
-                if (operator2 == '/')
+                else if (operator2 == '/')
                 {
                     sum = a - b / c;
                 }
-                if (operator2 == '%')
+                else if (operator2 == '%')
                 {
                     sum = a - b % c;
                 }
             }
-            if (operator1 == '/')
+            else if (operator1 == '/')
             {
                 if (operator2 == '*')
                 {
                     sum = a / b * c;
                 }
-                if (operator2 == '+')
+                else if (operator2 == '+')
                 {
                     sum = a / b + c;
                 }
-                if (operator2 == '-')
+                else if (operator2 == '-')
                 {
                     sum = a / b - c;
                 }
-                if (operator2 == '/')
+                else if (operator2 == '/')
                 {
                     sum = a / b / c;
                 }
-                if (operator2 == '%')
+                else if (operator2 == '%')
                 {
                     sum = a / b % c;
                 }
             }
-            if (operator1 == '%')
+            else if (operator1 == '%')
             {
                 if (operator2 == '*')
                 {
                     sum = a % b * c;
                 }
-                if (operator2 == '+')
+                else if (operator2 == '+')
                 {
                     sum = (a % b) + c;
                 }
-                if (operator2 == '-')
+                else if (operator2 == '-')
                 {
                     sum = a % b - c;
                 }
-                if (operator2 == '/')
+                else if (operator2 == '/')
                 {
                     sum = a % b / c;
                 }
-                if (operator2 == '%')
+                else if (operator2 == '%')
                 {
                     sum = a % b % c;
                 }
             }
             Console.WriteLine("{0} {1} {2} {3} {4} = {5} ", a, operator1, b, operator2, c, sum);
+
 
         }
 
